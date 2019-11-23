@@ -27,6 +27,7 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
 }
 
 button:hover {
@@ -62,4 +63,9 @@ input[type="password"]:hover{
 input[type="text"]:focus,
 input[type="password"]:focus{
     border: 1px solid #5d6ab9;
+}
+
+.errorText {
+    color: rgb(255, 0,0);
+    font-size: 70%;
 }
