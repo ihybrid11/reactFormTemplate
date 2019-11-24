@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DIV from '../../components/div/div'
 
 import classes from './form.css';
+import Input from '../../components/UI/Input/Input';
 
 class Form extends Component {
 
@@ -30,6 +31,8 @@ class Form extends Component {
         //     console.log('value = ' + true);
 
         // }
+        console.log(event.target);
+
         if (event.target.name === 'username') {
             this.formUserName = event.target.value;
             this.setState({ usernameDirty: true });
@@ -60,6 +63,7 @@ class Form extends Component {
 
     resetClickHandler = (event) => {
         this.setState(this.getInitialState());
+
         // this.formState = !this.formState;
     }
 
@@ -90,12 +94,12 @@ class Form extends Component {
                         </DIV>
 
 
-                        <input
+                        <Input
                             type="text"
                             name="username"
                             onBlur={this.inputOnChangeHandler}
                             required
-                        ></input>
+                        ></Input>
 
                     </DIV>
                     <DIV className="formInputGroup">
@@ -104,13 +108,12 @@ class Form extends Component {
                             {showErrorPass}
                         </DIV>
 
-                        <input
+                        <Input
                             type="password"
                             name="password"
-
                             onBlur={this.inputOnChangeHandler}
                             required
-                        ></input>
+                        ></Input>
                     </DIV>
                     <DIV className="formInputGroup formButtons">
                         <button onClick={this.submitClickHandler} disabled={this.state.submitDisable}>SUBMIT</button>
