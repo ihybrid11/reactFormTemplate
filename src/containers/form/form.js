@@ -26,7 +26,7 @@ class Form extends Component {
 
     }
 
-    inputOnChangeHandler = (event) => {
+    inputOnBlurHandler = (event) => {
         // if (event.target.value === '') {
         //     console.log('value = ' + true);
 
@@ -97,7 +97,7 @@ class Form extends Component {
                         <Input
                             type="text"
                             name="username"
-                            onBlur={this.inputOnChangeHandler}
+                            onBlur={this.inputOnBlurHandler}
                             required
                         ></Input>
 
