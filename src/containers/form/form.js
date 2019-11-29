@@ -62,7 +62,9 @@ class Form extends Component {
     }
 
     resetClickHandler = (event) => {
-        this.setState(this.getInitialState());
+        event.preventDefault();
+        this.myFormRef.reset();
+        // this.setState(this.getInitialState());
 
         // this.formState = !this.formState;
     }
@@ -81,7 +83,7 @@ class Form extends Component {
         ) : null;
 
         return (
-            <form className="formContainer">
+            <form className="formContainer" ref={(el) => this.myFormRef = el}>
 
                 <DIV className="appBar">
                     <p>EXAMPLE FORM</p>
@@ -111,7 +113,7 @@ class Form extends Component {
                         <Input
                             type="password"
                             name="password"
-                            onBlur={this.inputOnChangeHandler}
+                            onBlur={this.inputOnBlurHandler}
                             required
                         ></Input>
                     </DIV>
